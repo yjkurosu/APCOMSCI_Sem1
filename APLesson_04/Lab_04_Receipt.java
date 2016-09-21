@@ -26,13 +26,16 @@ public class Lab_04_Receipt
 		double tax = subtot * .08;
 		double tot = subtot + tax;
 		
-		System.out.println("\n\n<<<<<<<<<<__Receipt__>>>>>>>>>>\n");
+		System.out.printf("\n\n%43s", "<<<<<<<<<<<<<<<<__Receipt__>>>>>>>>>>>>>>>>\n");
 		form.format(item1, price1);
 		form.format(item2, price2);
 		form.format(item3, price3);
+		System.out.println("\n\n");
 		form.format("Subtotal", subtot);
 		form.format("Tax", tax);
 		form.format("Total", tot);
+		System.out.printf("\n%43s", "___________________________________________");
+	    System.out.println("\n* Thank you for your support *\n");
 	}
 	public void format(String item, double price)
 	{
