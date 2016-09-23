@@ -15,7 +15,7 @@ public class Lab_04_Interest
 		int compound1 = kb.nextInt();
 		System.out.println("Please enter the life of the loan in years:");
 		int years1 = kb.nextInt();
-		System.out.printf("\nYour total monthly payment is $%10.2f\n", monthpay.Monthly(rate1, principal1, compound1, years1));
+		System.out.printf("\nYour total monthly payment is $%10.2f.\n", monthpay.Monthly(rate1, principal1, compound1, years1));
 		
 	}
 	public double Monthly(double rate, double principal, int compound, int years)
