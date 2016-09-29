@@ -8,19 +8,19 @@ public class Lab_04_Cube
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
-		Lab_04_Cube work = new Lab_04_Cube();
 		
 		System.out.println("Please enter the lenghth of a side of the cube: ");
 		side = kb.nextDouble();
-		work.print(side, work.calcSurf(side));
+		calcSurf();
+		print();
 	}
-	public double calcSurf(double one)
+	public static void calcSurf()
 	{
-		return 6 * (side * side);
+		sa = 6.0 * (side * side);
 	
 	}
-	public void print(double one, double two)
+	public static void print()
 	{
-		System.out.printf("The surface area of a cube with %f unit sides is %.5f.\n", one, two);
+		System.out.printf("The surface area of a cube with %f unit sides is %.5f.\n", side, sa);
 	}
 }

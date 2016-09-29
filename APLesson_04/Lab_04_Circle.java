@@ -8,19 +8,20 @@ public class Lab_04_Circle
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
-		Lab_04_Circle work = new Lab_04_Circle();
 		
 		System.out.println("Please enter the radius of the circle: ");
 		r = kb.nextDouble();
-		work.print(side, work.calcSurf(side));
+		calcArea();
+		print();
 	}
-	public double calcArea(double one)
+	public static void calcArea()
 	{
-		return ;
-	
+		
+		
+		area = (r * r) * Math.PI; 
 	}
-	public void print(double one, double two)
+	public static void print()
 	{
-		System.out.printf("The surface area of a cube with %fcm sides is %.5f centimeters squared.\n", one, two);
+		System.out.printf("The area of a circle with a radius of %f is %.5f.\n", r, area);
 	}
 }
