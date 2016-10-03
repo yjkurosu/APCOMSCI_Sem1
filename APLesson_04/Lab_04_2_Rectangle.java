@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Lab_04_Rectangle
+public class Lab_04_2_Rectangle
 {
 	static double l;
 	static double w;

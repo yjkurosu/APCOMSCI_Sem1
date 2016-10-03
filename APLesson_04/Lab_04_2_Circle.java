@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Lab_04_Circle
+public class Lab_04_2_Circle
 {
 	static double r;
 	static double area;
@@ -15,9 +15,7 @@ public class Lab_04_Circle
 		print();
 	}
 	public static void calcArea()
-	{
-		
-		
+	{	
 		area = (r * r) * Math.PI; 
 	}
 	public static void print()

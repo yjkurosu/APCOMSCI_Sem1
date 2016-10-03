@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Lab_04_Cube
+public class Lab_04_2_Cube
 {
 	static double side;
 	static double sa;

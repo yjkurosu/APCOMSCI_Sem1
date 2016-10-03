@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Lab_04_Average
+public class Lab_04_2_Average
 {
 	static int num1;
 	static int num2;
