@@ -28,12 +28,12 @@ public class Lab_05_Discount
 		kb.nextLine();
 		
 		double subtot = price1 + price2 + price3 + price4;
-		discount(subtot);
-		double newSubtot = subtot - disc
+		double disc = discount(subtot);
+		double newSubtot = subtot - disc;
 		double tax = newSubtot * .08;
 		double tot = newSubtot + tax;
 		
-		System.out.printf("\n\n%43s", "<<<<<<<<<<<<<<<<__Receipt__>>>>>>>>>>>>>>>>\n");
+		System.out.printf("\n\n%47s", "<<<<<<<<<<<<<<<<<__Receipt__>>>>>>>>>>>>>>>>>>>\n");
 		format(item1, price1);
 		format(item2, price2);
 		format(item3, price3);
@@ -41,15 +41,20 @@ public class Lab_05_Discount
 		format("Subtotal", subtot);
 		format("Discount", disc);
 		format("Tax", tax);
+		format("Total", tot);
+		System.out.printf("\n%47s", "_______________________________________________\n");
+		System.out.printf("\n\n%47s", "Thank you for shopping with us!      \n");
 	}
 	
-	public static void discount(double one)
+	public static double discount(double one)
 	{
 		if(one >= 2000)
-			double disc = .15 * subtot;
+			return .15 * one;
 		
 		if(one < 2000)
-			double disc = 0;
+			return 0;
+		
+		return 0;
 	}
 	
 	public static void format(String one, double two)
