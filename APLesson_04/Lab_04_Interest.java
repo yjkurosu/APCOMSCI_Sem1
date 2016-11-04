@@ -20,7 +20,7 @@ public class Lab_04_Interest
 	}
 	public double Monthly(double rate, double principal, int compound, int years)
 	{
-		return (principal * (Math.pow((1+((.01 * rate) / compound)), (compound * years)))) / 12;
+		return (principal * (Math.pow((1+((.01 * rate) / compound)), (compound * years)))) / (12 * years);
 	}
 
 }
