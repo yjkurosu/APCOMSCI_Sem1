@@ -1,9 +1,14 @@
+import java.util.Scanner;
+
 public class Lab_07_ReplaceAts
 {
-	static String sentence = "Jack has a black car, a black jacket, and a black hat.";
+	static String sentence;
 	
 	public static void main(String[]args)
 	{
+		Scanner kb = new Scanner(System.in);
+		System.out.println("Please enter a sentence: ");
+		sentence = kb.nextLine();
 		replace();
 		System.out.println(sentence);
 	}
