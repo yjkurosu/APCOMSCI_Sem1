@@ -18,9 +18,9 @@ public class Lab_08_Underscores
 		{
 			return sen;
 		}
-		else{
+		else
+		{
 			return replace(sen.substring(0, sen.indexOf(" ")) + "_" + sen.substring(sen.indexOf(" ") + 1));
-
 		}
 	}
 }
