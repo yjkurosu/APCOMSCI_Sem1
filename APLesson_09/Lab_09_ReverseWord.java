@@ -20,13 +20,13 @@ public class Lab_09_ReverseWord
 			System.out.println(word);
 		}
 		
-		System.out.println();
+		System.out.println("\nReversed... ");
 		reverse(words);
 	}
 	
 	public static void reverse(String[] w)
 	{
-		for(int i = w.length; i >= 0; i--)
+		for(int i = w.length - 1; i >= 0; i--)
 		{
 			System.out.println(w[i]);
 		}
