@@ -10,10 +10,13 @@ public class MPHRunner
 		int uHours = kb.nextInt();
 		System.out.println("Enter the minutes: ");
 		int uMinutes = kb.nextInt();
+		double mph = 0;
 		
-		MilesPerHour object = new MilesPerHour(uDistance, uHours, uMinutes, mph);
+		MilesPerHour car = new MilesPerHour(uDistance, uHours, uMinutes, mph);
 		
-		System.out.println(uDistance + " miles in " + uHours + " hours and " + uMinutes + " minutes = " + object.getMilesPerHour() + " mph");
+		System.out.println(uDistance + " miles in " + uHours + " hours and " + uMinutes + " minutes = " + car.getMilesPerHour() + " mph");
 		
+		car.setValues(100, 2, 30);
+		System.out.println("100 miles in 2 hours and 30 minutes = " + car.getMilesPerHour() + " mph");
 	}
 }
