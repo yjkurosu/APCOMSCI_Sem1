@@ -22,6 +22,31 @@ public class Inventory
 		price = "$" + px;
 	}
 	
+	public String getMfr()
+	{
+		return manufacturer;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public String getCategory()
+	{
+		return category;
+	}
+	
+	public String getPrice()
+	{
+		return price;
+	}
+	
+	public int getUPC()
+	{
+		return upc;
+	}
+	
 	public String toString()
 	{
 		return "Item Info...\nManufacturer: " + manufacturer +

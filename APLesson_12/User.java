@@ -27,6 +27,26 @@ public class User
 		userID = (int)(Math.random() * 1000000) + 1;
 	}
 	
+	public String getFirst()
+	{
+		return firstName;
+	}
+	
+	public String getLast()
+	{
+		return lastName;
+	}
+	
+	public String getAvatar()
+	{
+		return avatar;
+	}
+	
+	public int getID()
+	{
+		return userID;
+	}
+	
 	public String toString()
 	{
 		return "Customer Info...\nFirst Name: " + firstName +
