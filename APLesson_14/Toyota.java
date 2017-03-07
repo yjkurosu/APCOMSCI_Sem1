@@ -1,7 +1,6 @@
-public class Toyota implements Location
+public class Toyota extends Car
 {
-	private double xCord, yCord;
-	
+	double xCord, yCord;
 	public Toyota()
 	{
 		xCord = 0;
@@ -17,7 +16,7 @@ public class Toyota implements Location
 	
 	public int getID()
 	{
-		return (int)(Math.random() * 1000000) + 1;
+		return ID;
 	}	
 	
 	public void move(double x, double y)

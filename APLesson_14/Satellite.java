@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 public class Satellite
 {
    public static void main(String[]args)
@@ -32,7 +32,27 @@ public class Satellite
            printout += "\nDistance for " + l.getID() + ": (" + getDistance(l.getLoc(), home)+ ")";
        }
 
+	   
+	   printout += "\n\n" + "==========================";
+	   
+		double x , y;
+		
+	   for (Location l : locate)
+       {
+		   x = Math.round(((Math.random() * 100) + 1) * 100.00) / 100.00;
+		   y = Math.round(((Math.random() * 100) + 1) * 100.00) / 100.00;
+           printout += "\nAfter " + l.getID() + " Moved: (" + x + ", " + y + ")";
+		   l.move(x,y);
+		   printout += "\nNew Location: (" + getLocation(l.getLoc()) + ")\n";
+       }
+	   
+	   printout += "\n\n" + "==========================" +
+                   "\nDistance from home...";
 
+       for (Location l : locate)
+       {
+           printout += "\nDistance for " + l.getID() + ": (" + getDistance(l.getLoc(), home)+ ")";
+       }
        System.out.println(printout);
    }
 
