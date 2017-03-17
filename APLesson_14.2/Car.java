@@ -2,6 +2,7 @@ public abstract class Car implements Location
 {
 	final int ID = (int)(Math.random() * 1000000) + 1;
 	double[] loc;
+	double xCord, yCord;
 	
 	public Car()
 	{
@@ -15,8 +16,8 @@ public abstract class Car implements Location
 	
 	public void move(double x, double y)
 	{
-		loc[0] += x;
-		loc[1] += y;
+		loc[0] = x;
+		loc[1] = y;
 	}
 	
 	public double[] getLoc()

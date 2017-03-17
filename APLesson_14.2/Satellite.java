@@ -44,7 +44,7 @@ public class Satellite
 		   String one = String.format("(%.2f)", x);
 		   String two = String.format("(%.2f)", y);
            printout += "\nAfter " + l.getID() + " Moved: " + one + ", " + two;
-		   ((Car)l).move(x,y);
+		   l.move(x,y);
 		   printout += "\nNew Location: " + getLocation(l.getLoc()) + "\n";
        }
 	   
