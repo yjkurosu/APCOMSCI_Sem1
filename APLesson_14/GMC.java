@@ -6,4 +6,5 @@ public class GMC extends Car
 		loc[0] = x;
 		loc[1] = y;
 	}
+
 }
