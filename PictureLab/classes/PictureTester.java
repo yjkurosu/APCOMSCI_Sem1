@@ -84,10 +84,10 @@ public class PictureTester
   
     public static void testMirrorDiagonal()
   {
-    Picture motor = new Picture("redMotorcycle.jpg");
-    motor.explore();
-    motor.mirrorDiagonal();
-    motor.explore();
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.mirrorDiagonal();
+    beach.explore();
   }
   
   /** Method to test mirrorTemple */
@@ -99,12 +99,35 @@ public class PictureTester
     temple.explore();
   }
   
+  public static void testMirrorArms()
+  {
+	  Picture snowman = new Picture("snowman.jpg");
+	  snowman.explore();
+	  snowman.mirrorArms();
+	  snowman.explore();
+  }
+  
+  public static void testMirrorGull()
+  {
+	  Picture seagull = new Picture("seagull.jpg");
+	  seagull.explore();
+	  seagull.mirrorGull();
+	  seagull.explore();
+  }
+  
   /** Method to test the collage method */
   public static void testCollage()
   {
     Picture canvas = new Picture("640x480.jpg");
     canvas.createCollage();
     canvas.explore();
+  }
+  
+  public static void testCopy()
+  {
+	Picture canvas = new Picture("640x480.jpg");
+    canvas.createCollage();
+    canvas.explore();  
   }
   
   /** Method to test edgeDetection */
@@ -136,9 +159,9 @@ public class PictureTester
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
-    testMirrorDiagonal();
+    //testMirrorDiagonal();
     //testCollage();
-    //testCopy();
+    testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
