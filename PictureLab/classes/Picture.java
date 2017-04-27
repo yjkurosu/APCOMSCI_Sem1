@@ -345,20 +345,20 @@ public class Picture extends SimplePicture
     }   
   }
   
-  public void copy(Picture fromPic, int startRow, int startCol, int endRow, int endCol)
+  public void copy(Picture fromPic, int startRow, int startCol, int startFromRow, int startFromCol, int endFromRow, int endFromCol)
   {
 	Pixel fromPixel = null;
     Pixel toPixel = null;
     Pixel[][] toPixels = this.getPixels2D();
     Pixel[][] fromPixels = fromPic.getPixels2D();
-    for (int fromRow = 0, toRow = startRow; 
-         fromRow < fromPixels.length &&
-         toRow < endRow; 
+    for (int fromRow = startFromRow, toRow = startRow; 
+         fromRow < endFromRow &&
+         toRow < toPixels.length; 
          fromRow++, toRow++)
     {
-      for (int fromCol = 0, toCol = startCol; 
-           fromCol < fromPixels[0].length &&
-           toCol < endCol;  
+      for (int fromCol =startFromCol, toCol = startCol; 
+           fromCol < endFromCol &&
+           toCol < toPixels[0].length;  
            fromCol++, toCol++)
       {
         fromPixel = fromPixels[fromRow][fromCol];
@@ -373,9 +373,9 @@ public class Picture extends SimplePicture
   {
     Picture flower1 = new Picture("flower1.jpg");
     Picture flower2 = new Picture("flower2.jpg");
-    this.copy(flower1,0,0,5,5);
-    this.copy(flower2,100,0,105,300);
-    this.copy(flower1,200,0,300,300);
+    this.copy(flower1,0,0,0,0,50,50);
+    this.copy(flower2,50,0,0,0,75,75);
+    this.copy(flower1,200,0,10,10,15,15);
     Picture flowerNoBlue = new Picture(flower2);
     flowerNoBlue.zeroBlue();
     this.copy(flowerNoBlue,300,0);
@@ -383,6 +383,21 @@ public class Picture extends SimplePicture
     this.copy(flower2,500,0);
     this.mirrorVertical();
     this.write("collage.jpg");
+  }
+  
+  public void myCollage()
+  {
+	  Picture swan = new Picture("swan.jpg");
+	  Picture koala = new Picture("koala.jpg");
+	  Picture butterfly = new Picture("butterfly1.jpg");
+	  swan.mirrorDiagonal();
+	  koala.negate();
+	  butterfly.grayscale();
+	  this.copy(swan,0,0,0,0,100,100);
+	  this.copy(koala,100,0,0,0,200,200);
+	  this.copy(butterfly,300,0,0,0,300,300);
+	  this.mirrorVertical();
+	  this.write("mycollage.jpg");
   }
   
   
@@ -393,8 +408,11 @@ public class Picture extends SimplePicture
   {
     Pixel leftPixel = null;
     Pixel rightPixel = null;
+	Pixel topPixel = null;
+	Pixel bottomPixel = null;
     Pixel[][] pixels = this.getPixels2D();
     Color rightColor = null;
+	Color bottomColor = null;
     for (int row = 0; row < pixels.length; row++)
     {
       for (int col = 0; 
@@ -410,10 +428,47 @@ public class Picture extends SimplePicture
           leftPixel.setColor(Color.WHITE);
       }
     }
+	
+	for(int row = 0; row < pixels.length - 1; row++)
+	{
+		for(int col = 0; col < pixels[0].length; col++)
+		{
+			topPixel = pixels[row][col];
+			bottomPixel = pixels[row + 1][col];
+			bottomColor = bottomPixel.getColor();
+			if(topPixel.colorDistance(bottomColor) > edgeDist)
+				topPixel.setColor(Color.BLACK);
+			else
+				topPixel.setColor(Color.WHITE);
+		}
+	}
   }
   
-
+  public void edgeDetection2(int edgeDist)
+  {
+    Pixel topPixel = null;
+    Pixel bottomPixel = null;
+	Pixel[][] pixels = this.getPixels2D();
+    double topAverage = 0.0;
+    double bottomAverage = 0.0;
+    int endRow = pixels.length  - 1;
   
+    for (int row = 0; row < endRow; row++) 
+	{
+      for (int col = 0; col < pixels[0].length; col++) 
+	  {
+        topPixel = pixels[row][col];
+        bottomPixel = pixels[row + 1][col];
+        topAverage = topPixel.getAverage();
+        bottomAverage = bottomPixel.getAverage();
+		
+        if (Math.abs(topAverage - bottomAverage) < edgeDist)
+          topPixel.setColor(Color.WHITE);
+        else
+          topPixel.setColor(Color.BLACK);
+      }
+    }
+  }     
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
