@@ -23,5 +23,11 @@ public class DeckTester {
 		String[] suits3 = {"Giraffes", "Lions"};
 		int[] pointValues3 = {2, 1, 6};
 		Deck d3 = new Deck(ranks3, suits3, pointValues3);
+		
+		String[] ranks4 = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+		String[] suits4 = {"Clubs", "Spades", "Diamonds", "Hearts"};
+		int[] pointValues4 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+		Deck d4 = new Deck(ranks4, suits4, pointValues4);
+		System.out.println(d4);
 	}
 }
