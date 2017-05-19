@@ -5,7 +5,8 @@ public class SimulationRunner
 {
         public static void main(String[]args)
         {
-
+            int userScore =0;
+            int cpuScore=0;
             Simulation s1 = new Simulation();
             Player PG1 = new Player("Russell Westbrook", 42.5);
             Player SG1 = new Player("Victor Oladipo", 44.2);
@@ -20,6 +21,7 @@ public class SimulationRunner
             Player C2 = new Player("Zaza Pachulia", 53.4);
             if (s1.wentIn(PG1.getShootpct())) {
                 System.out.println("shot made");
+                userScore++;
             } else
                 System.out.println("shot missed");
 

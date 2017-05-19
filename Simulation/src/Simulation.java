@@ -3,7 +3,7 @@ public class Simulation
     private double shot;
     public Simulation()
     {
-        double shot = (double)(Math.random()*100+1);
+        double shot = 0;
     }
 
     public boolean wentIn(double shotPct)
