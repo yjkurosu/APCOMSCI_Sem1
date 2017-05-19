@@ -21,10 +21,12 @@ public class SimulationRunner
             Player C2 = new Player("Zaza Pachulia", 53.4);
             if (s1.wentIn(PG1.getShootpct())) {
                 System.out.println("shot made");
-                userScore++;
-            } else
-                System.out.println("shot missed");
-
+                userScore+=2;
+            }
+           
+                else
+                    System.out.println("shot missed");
+            System.out.println(userScore + "-" + cpuScore);
 
         }
 }
