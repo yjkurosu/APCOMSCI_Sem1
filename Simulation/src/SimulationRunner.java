@@ -3,10 +3,10 @@
  */
 public class SimulationRunner
 {
+        public static int userScore = 0;
+        public static int cpuScore = 0;
         public static void main(String[]args)
         {
-            int userScore =0;
-            int cpuScore=0;
             Simulation s1 = new Simulation();
             Player PG1 = new Player("Russell Westbrook", 42.5);
             Player SG1 = new Player("Victor Oladipo", 44.2);
@@ -19,14 +19,20 @@ public class SimulationRunner
             Player SF2 = new Player("Kevin Durant", 53.7);
             Player PF2 = new Player("Draymond Green", 41.8);
             Player C2 = new Player("Zaza Pachulia", 53.4);
-            if (s1.wentIn(PG1.getShootpct())) {
+            hometeamscore(s1, PG1);
+            System.out.println(userScore + "-" + cpuScore);
+        }
+        public static void hometeamscore(Simulation s, Player p)
+        {
+            if (s.wentIn(p.getShootpct())) {
                 System.out.println("shot made");
                 userScore+=2;
+                hometeamscore(s, p);
             }
            
-                else
+            else
                     System.out.println("shot missed");
-            System.out.println(userScore + "-" + cpuScore);
+
 
         }
 }
