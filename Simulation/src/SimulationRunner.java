@@ -5,6 +5,7 @@ public class SimulationRunner
 {
         public static int userScore = 0;
         public static int cpuScore = 0;
+        public static boolean possesion = true;
         public static void main(String[]args)
         {
             Simulation s1 = new Simulation();
@@ -19,20 +20,49 @@ public class SimulationRunner
             Player SF2 = new Player("Kevin Durant", 53.7);
             Player PF2 = new Player("Draymond Green", 41.8);
             Player C2 = new Player("Zaza Pachulia", 53.4);
-            hometeamscore(s1, PG1);
+            hometeamscore(s1, PG1, PG2);
             System.out.println(userScore + "-" + cpuScore);
         }
-        public static void hometeamscore(Simulation s, Player p)
+
+
+        public static void hometeamscore(Simulation s, Player p1, Player p2)
         {
-            if (s.wentIn(p.getShootpct())) {
-                System.out.println("shot made");
-                userScore+=2;
-                hometeamscore(s, p);
-            }
-           
-            else
-                    System.out.println("shot missed");
+            while(possesion && userScore <= 2 && cpuScore <= 2)
+                {
+                    if (s.wentIn(p1.getShootpct()))
+                    {
+                        System.out.println("home shot made");
+                        userScore+=2;
+                        hometeamscore(s, p1, p2);
+                    }
 
-
+                    else
+                    {
+                        System.out.println("home shot missed");
+                        possesion = false;
+                        awayteamscore(s, p1, p2);
+                    }
+                }
+            System.out.println("End");
         }
+
+        public static void awayteamscore(Simulation s, Player p1, Player p2)
+        {
+            while (!possesion && cpuScore <= 2 && userScore <= 2)
+                {
+                    if (s.wentIn(p2.getShootpct()))
+                    {
+                        System.out.println("away shot made");
+                        cpuScore += 2;
+                        awayteamscore(s, p1, p2);
+                    }
+                    else
+                    {
+                        System.out.println("away shot missed");
+                        possesion = true;
+                        hometeamscore(s, p1, p2);
+                    }
+                }
+        }
+
 }
