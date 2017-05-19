@@ -2,7 +2,7 @@ public class Simulation
 {
     public boolean wentIn(int shotPct)
     {
-        private int shot = (int)(Math.random()*100+1);
+        int shot = (int)(Math.random()*100+1);
         if(shot>shotPct)
         {
             return true;
