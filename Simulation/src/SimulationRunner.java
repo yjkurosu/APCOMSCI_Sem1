@@ -5,6 +5,7 @@ public class SimulationRunner
 {
         public static void main(String[]args)
         {
+
             Simulation s1 = new Simulation();
             Player PG1 = new Player("Russell Westbrook", 42.5);
             Player SG1 = new Player("Victor Oladipo", 44.2);
@@ -21,5 +22,7 @@ public class SimulationRunner
                 System.out.println("shot made");
             } else
                 System.out.println("shot missed");
+
+
         }
 }
