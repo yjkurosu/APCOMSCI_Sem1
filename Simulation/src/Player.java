@@ -1,11 +1,16 @@
 public class Player {
     private String name;
     private double shootpct;
+    private int shotCount;
+    private double usage;
 
-    Player(String n, double p)
+    Player(String n, double p, double u)
     {
         name = n;
         shootpct = p;
+        shotCount = 0;
+        usage = u;
+
     }
 
     public String getName()
@@ -18,8 +23,24 @@ public class Player {
         return shootpct;
     }
 
+    public int getShotCount()
+    {
+        return shotCount;
+    }
+
+    public int setShotCount(int num)
+    {
+       return shotCount = num;
+    }
+
+    public double getUsage()
+    {
+        return usage;
+    }
+
     public String toString()
     {
-        return name + " has a shooting percentage of " + shootpct + "%!";
+        return name + " (" + shotCount + ")";
     }
+
 }
