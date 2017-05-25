@@ -1,9 +1,9 @@
 public class Simulation
 {
     private double shot;
-    public static int userScore = 0;
-    public static int cpuScore = 0;
-    public static boolean possesion = true;
+    private static int userScore = 0;
+    private static int cpuScore = 0;
+    private static boolean possesion = true;
     public Simulation()
     {
         double shot = 0;
@@ -21,7 +21,6 @@ public class Simulation
 
     public static void hometeamscore(Simulation s, Player[] team)
     {
-        int homeShotCount=0;
         while(possesion && userScore <= 100 && cpuScore <= 100)
         {
             Player p1 = getPlayer(team);
