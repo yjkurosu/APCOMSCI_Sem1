@@ -4,6 +4,7 @@ public class Simulation
     private static int userScore = 0;
     private static int cpuScore = 0;
     private static boolean possesion = true;
+    private static double rebound;
     public Simulation()
     {
         double shot = 0;
@@ -19,10 +20,12 @@ public class Simulation
         return false;
     }
 
-    public static void hometeamscore(Simulation s, Player[] team)
+    public static void hometeamscore(Simulation s, Team t)
     {
         while(possesion && userScore <= 100 && cpuScore <= 100)
         {
+            System.out.println();
+            Player []team = t.getTeam();
             Player p1 = getPlayer(team);
             if (s.wentIn(p1.getShootpct()))
             {
@@ -34,19 +37,24 @@ public class Simulation
             else
             {
                 System.out.println("home shot missed");
-                possesion = false;
+                possesion = gotReb(t.getOffRebPct());
                 System.out.println(p1 + "Misses!");
-
+                if(possesion)
+                {
+                    System.out.println(t.getName() + " gets the rebound!");
+                }
             }
             s.playerShot(p1);
         }
 
     }
 
-    public static void awayteamscore(Simulation s, Player[] team)
+    public static void awayteamscore(Simulation s, Team t)
     {
         while (!possesion && cpuScore <= 100 && userScore <= 100)
         {
+            System.out.println();
+            Player []team = t.getTeam();
             Player p2 = getPlayer(team);
             if (s.wentIn(p2.getShootpct()))
             {
@@ -57,26 +65,30 @@ public class Simulation
             else
             {
                 System.out.println("away shot missed");
-                possesion = true;
+                possesion = !gotReb(t.getOffRebPct());
                 System.out.println(p2 + "Misses!");
+                if(!possesion)
+                {
+                    System.out.println(t.getName() + " gets the rebound!");
+                }
 
             }
             s.playerShot(p2);
         }
     }
 
-    public static void gamescore(Simulation s, Player[] team1, Player[] team2)
+    public static void gamescore(Simulation s, Team t1, Team t2)
     {
         while(userScore<=100 && cpuScore<=100)
         {
 
             if(possesion)
             {
-                hometeamscore(s, team1);
+                hometeamscore(s, t1);
             }
             else
             {
-                awayteamscore(s, team2);
+                awayteamscore(s, t2);
             }
         }
     }
@@ -99,6 +111,16 @@ public class Simulation
     public static int playerShot(Player p)
     {
         return p.setShotCount(p.getShotCount() + 1);
+    }
+
+    public static boolean gotReb(double rebPct)
+    {
+        rebound = (double)(Math.random()*100+1);
+        if(rebound<=rebPct)
+        {
+            return true;
+        }
+        return false;
     }
 
     public String toString()

@@ -1,4 +1,5 @@
-public class Player {
+public class Player extends Team
+{
     private String name;
     private double shootpct;
     private int shotCount;
