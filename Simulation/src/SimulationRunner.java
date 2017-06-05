@@ -8,6 +8,7 @@ public class SimulationRunner extends PlayerDatabase
         {
             System.out.println("Pick a team");
             Simulation s1 = new Simulation();
+            Time t1 = new Time();
             s1.gamescore(s1, thunder, warriors);
             System.out.println(s1);
         }
