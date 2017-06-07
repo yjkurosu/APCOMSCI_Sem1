@@ -3,21 +3,21 @@
  */
 public class PlayerDatabase
 {
-        static Player PG1 = new Player("Russell Westbrook", 42.5, 41.7);
-        static Player SG1 = new Player("Victor Oladipo", 44.2, 21.4);
-        static Player SF1 = new Player("Andre Roberson", 46.4, 10.1);
-        static Player PF1 = new Player("Domantas Sabonis", 39.9, 15.4);
-        static Player C1 = new Player("Steven Adams", 57.1, 16.2);
+        static Player PG1 = new Player("Russell Westbrook", 42.5, 41.7, 34.3, 30.0);
+        static Player SG1 = new Player("Victor Oladipo", 44.2, 21.4, 36.1, 38.1);
+        static Player SF1 = new Player("Andre Roberson", 46.4, 10.1, 24.5, 39.0);
+        static Player PF1 = new Player("Domantas Sabonis", 39.9, 15.4, 32.1, 33.9);
+        static Player C1 = new Player("Steven Adams", 57.1, 16.2, 0.0, 0.0);
 
-        static Player PG2 = new Player("Stephen Curry", 46.8, 30.1);
-        static Player SG2 = new Player("Klay Thompson", 46.8, 26.1);
-        static Player SF2 = new Player("Kevin Durant", 53.7, 27.8);
-        static Player PF2 = new Player("Draymond Green", 41.8, 16.2);
-        static Player C2 = new Player("Zaza Pachulia", 53.4, 15.3);
+        static Player PG2 = new Player("Stephen Curry", 46.8, 30.1, 41.1, 54.6);
+        static Player SG2 = new Player("Klay Thompson", 46.8, 26.1, 41.4, 47.2);
+        static Player SF2 = new Player("Kevin Durant", 53.7, 27.8, 37.5, 30.3);
+        static Player PF2 = new Player("Draymond Green", 41.8, 16.2, 30.8, 40.7);
+        static Player C2 = new Player("Zaza Pachulia", 53.4, 15.3, 0.0, 0.0);
 
-        static Player PG3 = new Player("Kyrie Irving", 47.3, 30.8);
-        static Player SG3 = new Player("J.R. Smith", 34.6, 14.6);
-        static Player SF3 = new Player("LeBron James", 54.8, 30.0);
+        static Player PG3 = new Player("Kyrie Irving", 47.3, 30.8, 40.1, 31.0);
+        static Player SG3 = new Player("J.R. Smith", 34.6, 14.6, 35.1, 75.9);
+        static Player SF3 = new Player("LeBron James", 54.8, 30.0, 36.3, );
         static Player PF3 = new Player("Kevin Love", 42.7, 26.4);
         static Player C3 = new Player("Tristan Thomson", 60.0, 11.3);
 
