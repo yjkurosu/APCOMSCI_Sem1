@@ -86,6 +86,19 @@ public class Simulation
     public static void gamescore(Simulation s, Team t1, Team t2)
     {
         int quarter = 1;
+        while(quarter <= 4)
+        {
+            time.setRemainTime(time.getStartTime());
+            System.out.println("\n\n-----------------------------------------------------Beginning of Quarter " + quarter + "-------------------------------------------------");
+            System.out.println(t1.getName() + "  " + userScore + "-" + cpuScore + "  " + t2.getName());
+            gamePlay(s, t1, t2);
+            System.out.println("-----------------------------------------------------End of Quarter " + quarter + "-------------------------------------------------");
+            quarter++;
+        }
+    }
+
+    public static void gamePlay(Simulation s, Team t1, Team t2)
+    {
         while(time.getRemainTime() > 0)
         {
 
@@ -100,14 +113,8 @@ public class Simulation
                 awayteamscore(s, t2);
             }
         }
-
-
-        while(quarter <= 4)
-        {
-            time.setRemainTime(time.getStartTime());
-            gamescore(s, t1, t2);
-        }
     }
+
 
     public static Player getPlayer(Player[] arr)
     {
