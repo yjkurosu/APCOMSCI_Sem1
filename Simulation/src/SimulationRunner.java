@@ -11,10 +11,13 @@ static Scanner kb = new Scanner(System.in);
             Simulation s1 = new Simulation();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             Time t1 = new Time();
             s1.gamescore(s1, thunder, warriors);
             System.out.println(s1);
 =======
+=======
+>>>>>>> 900ac7a6d7630f561a205790c73fcbc229901537
 =======
 >>>>>>> 900ac7a6d7630f561a205790c73fcbc229901537
             PlayerDatabase HOME = new PlayerDatabase();
@@ -34,6 +37,9 @@ static Scanner kb = new Scanner(System.in);
             }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 900ac7a6d7630f561a205790c73fcbc229901537
+=======
 >>>>>>> 900ac7a6d7630f561a205790c73fcbc229901537
 =======
 >>>>>>> 900ac7a6d7630f561a205790c73fcbc229901537
