@@ -21,6 +21,16 @@ public class Simulation
         return false;
     }
 
+    public boolean threes(double threePnt)
+    {
+        shot = (double)(Math.random()*100+1);
+        if(shot<=threePnt)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public static void hometeamscore(Simulation s, Team t)
     {
         while(possesion && time.getRemainTime() > 0)
@@ -29,6 +39,10 @@ public class Simulation
             System.out.println(time);
             Player []team = t.getTeam();
             Player p1 = getPlayer(team);
+            if(shootThree(p1));
+            {
+                userScore+=3;
+            }
             if (s.wentIn(p1.getShootpct()))
             {
                 System.out.println("home shot made");
@@ -61,6 +75,10 @@ public class Simulation
             System.out.println(time);
             Player []team = t.getTeam();
             Player p2 = getPlayer(team);
+            if(shootThree(p2));
+            {
+                userScore+=3;
+            }
             if (s.wentIn(p2.getShootpct()))
             {
                 System.out.println("away shot made");
@@ -144,6 +162,23 @@ public class Simulation
             return true;
         }
         return false;
+    }
+
+    public static boolean shootThree(Player p)
+    {
+        double num = (double)(Math.random()*100+1);
+        if(num<p.getThreeUsage())
+        {
+            double num2 = (double)(Math.random()*100+1);
+            if(num2<p.getThree())
+            {
+               return true;
+            }
+        }
+        else
+        {
+            return false;
+        }
     }
 
 
