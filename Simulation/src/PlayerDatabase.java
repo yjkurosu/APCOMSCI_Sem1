@@ -68,14 +68,14 @@ public class PlayerDatabase
 
         static Team thunder = new Team(PG1, SG1, SF1, PF1, C1, 27.8, "Thunder");
         static Team warriors = new Team(PG2, SG2, SF2, PF2, C2, 22.5, "Warriors");
-        static Team cavaliers = new Team(PG3, SG3, SF3, PF3, C3, 27.8, "Cavaliers");
-        static Team lakers = new Team(PG4, SG4, SF4, PF4, C4, 22.5, "Lakers");
-        static Team spurs = new Team(PG5, SG5, SF5, PF5, C5, 27.8, "Spurs");
-        static Team bulls = new Team(PG6, SG6, SF6, PF6, C6, 22.5, "Bulls");
-        static Team celtics = new Team(PG7, SG7, SF7, PF7, C7, 27.8, "Celtics");
-        static Team knicks = new Team(PG8, SG8, SF8, PF8, C8, 22.5, "Knicks");
-        static Team raptors = new Team(PG9, SG9, SF9, PF9, C9, 27.8, "Raptors");
-        static Team heat = new Team(PG10, SG10, SF10, PF10, C10, 22.5, "Heat");
+        static Team cavaliers = new Team(PG3, SG3, SF3, PF3, C3, 22.1, "Cavaliers");
+        static Team lakers = new Team(PG4, SG4, SF4, PF4, C4, 25.0, "Lakers");
+        static Team spurs = new Team(PG5, SG5, SF5, PF5, C5, 24.9, "Spurs");
+        static Team bulls = new Team(PG6, SG6, SF6, PF6, C6, 27.2, "Bulls");
+        static Team celtics = new Team(PG7, SG7, SF7, PF7, C7, 21.4, "Celtics");
+        static Team knicks = new Team(PG8, SG8, SF8, PF8, C8, 26.6, "Knicks");
+        static Team raptors = new Team(PG9, SG9, SF9, PF9, C9, 24.2, "Raptors");
+        static Team heat = new Team(PG10, SG10, SF10, PF10, C10, 24.2, "Heat");
 
         public Team returnTeam(String t)
         {
