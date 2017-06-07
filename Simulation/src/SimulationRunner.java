@@ -11,7 +11,7 @@ public class SimulationRunner extends PlayerDatabase {
     public static void main(String[] args)
     {
 
-
+        Time t1 = new Time();
         Simulation s1 = new Simulation();
         PlayerDatabase HOME = new PlayerDatabase();
         PlayerDatabase AWAY = new PlayerDatabase();
