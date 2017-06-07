@@ -1,5 +1,6 @@
 public class Simulation
 {
+    private static Time time = new Time();
     private double shot;
     private static int userScore = 0;
     private static int cpuScore = 0;
@@ -22,9 +23,10 @@ public class Simulation
 
     public static void hometeamscore(Simulation s, Team t)
     {
-        while(possesion && userScore <= 100 && cpuScore <= 100)
+        while(possesion && time.getRemainTime() > 0)
         {
             System.out.println();
+            System.out.println(time);
             Player []team = t.getTeam();
             Player p1 = getPlayer(team);
             if (s.wentIn(p1.getShootpct()))
@@ -32,6 +34,7 @@ public class Simulation
                 System.out.println("home shot made");
                 userScore+=2;
                 System.out.println(p1 + " Scores!");
+                possesion = false;
             }
 
             else
@@ -42,6 +45,7 @@ public class Simulation
                 if(possesion)
                 {
                     System.out.println(t.getName() + " gets the rebound!");
+                    time.shotTime();
                 }
             }
             s.playerShot(p1);
@@ -51,9 +55,10 @@ public class Simulation
 
     public static void awayteamscore(Simulation s, Team t)
     {
-        while (!possesion && cpuScore <= 100 && userScore <= 100)
+        while (!possesion && time.getRemainTime() > 0)
         {
             System.out.println();
+            System.out.println(time);
             Player []team = t.getTeam();
             Player p2 = getPlayer(team);
             if (s.wentIn(p2.getShootpct()))
@@ -61,6 +66,7 @@ public class Simulation
                 System.out.println("away shot made");
                 cpuScore += 2;
                 System.out.println(p2 + " Scores!");
+                possesion = true;
             }
             else
             {
@@ -70,8 +76,8 @@ public class Simulation
                 if(!possesion)
                 {
                     System.out.println(t.getName() + " gets the rebound!");
+                    time.shotTime();
                 }
-
             }
             s.playerShot(p2);
         }
@@ -79,17 +85,27 @@ public class Simulation
 
     public static void gamescore(Simulation s, Team t1, Team t2)
     {
-        while(userScore<=100 && cpuScore<=100)
+        int quarter = 1;
+        while(time.getRemainTime() > 0)
         {
 
             if(possesion)
             {
+                time.shotTime();
                 hometeamscore(s, t1);
             }
             else
             {
+                time.shotTime();
                 awayteamscore(s, t2);
             }
+        }
+
+
+        while(quarter <= 4)
+        {
+            time.setRemainTime(time.getStartTime());
+            gamescore(s, t1, t2);
         }
     }
 

@@ -2,9 +2,9 @@
  * Created by cooperg2832 on 5/19/2017.
  */
 import java.util.Scanner;
-public class SimulationRunner extends PlayerDatabase
-{
+public class SimulationRunner extends PlayerDatabase {
 
+<<<<<<< HEAD
 static Scanner kb = new Scanner(System.in);
         public static void main(String[]args)
         {
@@ -24,10 +24,31 @@ static Scanner kb = new Scanner(System.in);
                     System.out.println(HOME.returnTeam(home).getName() + " " + " " + s1 + AWAY.returnTeam(away).getName());
                 }
             }
+=======
+    static Scanner kb = new Scanner(System.in);
+>>>>>>> 51da40a953bdddb10785bca3b56734ff9449e921
 
+    public static void main(String[] args) {
+        Simulation s1 = new Simulation();
+
+        Time t1 = new Time();
+        s1.gamescore(s1, thunder, warriors);
+        System.out.println(s1);
+        PlayerDatabase HOME = new PlayerDatabase();
+        PlayerDatabase AWAY = new PlayerDatabase();
+        System.out.println("Pick a home team from the following: Warriors, Cavaliers, Lakers, Spurs, Thunder, Bulls, Celtics, Knicks, Raptors, Heat");
+        String home = kb.nextLine();
+        System.out.println("Pick an away team from the following: Warriors, Cavaliers, Lakers, Spurs, Thunder, Bulls, Celtics, Knicks, Raptors, Heat");
+        String away = kb.nextLine();
+        String[] NBA = {"Warriors", "Cavaliers", "Lakers", "Spurs", "Thunder", "Bulls", "Celtics", "Knicks", "Raptors", "Heat"};
+        for (String team : NBA) {
+            if (home.equals(team)) {
+                s1.gamescore(s1, HOME.returnTeam(home), AWAY.returnTeam(away));
+                System.out.println(s1);
+            }
         }
 
 
-
+    }
 
 }
