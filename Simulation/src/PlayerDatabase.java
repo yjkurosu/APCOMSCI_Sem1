@@ -57,11 +57,11 @@ public class PlayerDatabase
         static Player PF9 = new Player("Serge Ibaka", 45.9, 20.9);
         static Player C9 = new Player("Jonas Valanciunas", 55.7, 19.5);
 
-        static Player PG10 = new Player("Goran Dragic", 46.8, 30.1);
-        static Player SG10 = new Player("Dion Waiters", 46.8, 26.1);
-        static Player SF10 = new Player("Rodney McGruder", 53.7, 27.8);
-        static Player PF10 = new Player("Luke Babbitt", 41.8, 16.2);
-        static Player C10 = new Player("Hassan Whiteside", 53.4, 15.3);
+        static Player PG10 = new Player("Goran Dragic", 47.5, 27.1);
+        static Player SG10 = new Player("Dion Waiters", 42.4, 26.3);
+        static Player SF10 = new Player("Rodney McGruder", 41.3, 12.3);
+        static Player PF10 = new Player("Luke Babbitt", 40.2, 13.0);
+        static Player C10 = new Player("Hassan Whiteside", 55.7, 22.7);
 
 
 
@@ -79,45 +79,46 @@ public class PlayerDatabase
 
         public Team returnTeam(String t)
         {
-                if t.equals("Warriors")
+                if(t.equals("Warriors"))
                 {
                         return warriors;
                 }
-                if t.equals("Thunder")
+                if (t.equals("Thunder"))
                 {
                         return thunder;
                 }
-                if t.equals("Cavaliers")
+                if (t.equals("Cavaliers"))
                 {
                         return cavaliers;
                 }
-                if t.equals("Lakers")
+                if (t.equals("Lakers"))
                 {
                         return lakers;
                 }
-                if t.equals("Spurs")
+                if (t.equals("Spurs"))
                 {
                         return spurs;
                 }
-                if t.equals("Bulls")
+                if (t.equals("Bulls"))
                 {
                         return bulls;
                 }
-                if t.equals("Celtics")
+                if (t.equals("Celtics"))
                 {
                         return celtics;
                 }
-                if t.equals("Knicks")
+                if (t.equals("Knicks"))
                 {
                         return knicks;
                 }
-                if t.equals("Raptors")
+                if (t.equals("Raptors"))
                 {
                         return raptors;
                 }
-                if t.equals("Heat")
+                if (t.equals("Heat"))
                 {
                         return heat;
                 }
+                return warriors;
         }
 }
