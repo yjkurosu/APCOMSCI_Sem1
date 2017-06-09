@@ -49,7 +49,7 @@ public class Player extends Team
 
     public String toString()
     {
-        return name + " (" + shotCount + ")";
+        return name;
     }
 
 }

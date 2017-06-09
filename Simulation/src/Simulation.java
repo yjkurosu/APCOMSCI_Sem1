@@ -41,13 +41,22 @@ public class Simulation
             Player p1 = getPlayer(team);
             if(shootThree(p1))
             {
-                userScore+=3;
-                System.out.println(p1 + "madeThree");
+
+                if(s.wentIn(p1.getThree()))
+                {
+                    userScore+=3;
+                    System.out.println(p1 + " Makes a Three!");
+                    possesion = false;
+                }
+                else
+                {
+                    homeRebound(t, p1);
+                }
 
             }
             else if (s.wentIn(p1.getShootpct()))
             {
-                System.out.println("home shot made");
+                //System.out.println("home shot made");
                 userScore+=2;
                 System.out.println(p1 + " Scores!");
                 possesion = false;
@@ -55,14 +64,7 @@ public class Simulation
 
             else
             {
-                System.out.println("home shot missed");
-                possesion = gotReb(t.getOffRebPct());
-                System.out.println(p1 + "Misses!");
-                if(possesion)
-                {
-                    System.out.println(t.getName() + " gets the rebound!");
-                    time.shotTime();
-                }
+               homeRebound(t,p1);
             }
             s.playerShot(p1);
         }
@@ -79,26 +81,29 @@ public class Simulation
             Player p2 = getPlayer(team);
             if(shootThree(p2))
             {
-                userScore+=3;
-                System.out.println("made three");
+
+                if(s.wentIn(p2.getThree()))
+                {
+                    cpuScore+=3;
+                    System.out.println(p2 + " Makes a Three!");
+                    possesion = true;
+                }
+                else
+                {
+                    awayRebound(t, p2);
+                }
+
             }
             else if(s.wentIn(p2.getShootpct()))
             {
-                System.out.println("away shot made");
+                //System.out.println("away shot made");
                 cpuScore += 2;
                 System.out.println(p2 + " Scores!");
                 possesion = true;
             }
             else
             {
-                System.out.println("away shot missed");
-                possesion = !gotReb(t.getOffRebPct());
-                System.out.println(p2 + "Misses!");
-                if(!possesion)
-                {
-                    System.out.println(t.getName() + " gets the rebound!");
-                    time.shotTime();
-                }
+                awayRebound(t,p2);
             }
             s.playerShot(p2);
         }
@@ -127,6 +132,7 @@ public class Simulation
             {
                 time.shotTime();
                 hometeamscore(s, t1);
+                System.out.println(t1.getName() + " " + userScore + " - " + cpuScore + " " + t2.getName() );
             }
             else
             {
@@ -172,17 +178,44 @@ public class Simulation
         double num = (double)(Math.random()*100+1);
         if(num<p.getThreeUsage())
         {
-            double num2 = (double)(Math.random()*100+1);
-            if(num2<p.getThree())
-            {
-               return true;
-            }
+            return true;
         }
 
             return false;
 
     }
 
+    public static boolean homeRebound(Team t1, Player p)
+    {
+        possesion = gotReb(t1.getOffRebPct());
+        System.out.println(p + " Misses!");
+        if(possesion)
+        {
+            System.out.println(t1.getName() + " gets the rebound!");
+            time.shotTime();
+        }
+        else
+        {
+            System.out.println("The defense gets the rebound!");
+        }
+        return possesion;
+    }
+
+    public static boolean awayRebound(Team t1, Player p)
+    {
+        possesion = !gotReb(t1.getOffRebPct());
+        System.out.println(p + " Misses!");
+        if(!possesion)
+        {
+            System.out.println(t1.getName() + " gets the rebound!");
+            time.shotTime();
+        }
+        else
+        {
+            System.out.println("The defense gets the rebound!");
+        }
+        return possesion;
+    }
 
 
     public String toString()
