@@ -17,13 +17,13 @@ public class PlayerDatabase
 
         static Player PG3 = new Player("Kyrie Irving", 47.3, 30.8, 40.1, 31.0);
         static Player SG3 = new Player("J.R. Smith", 34.6, 14.6, 35.1, 75.9);
-        static Player SF3 = new Player("LeBron James", 54.8, 30.0, 36.3, );
-        static Player PF3 = new Player("Kevin Love", 42.7, 26.4);
-        static Player C3 = new Player("Tristan Thomson", 60.0, 11.3);
+        static Player SF3 = new Player("LeBron James", 54.8, 30.0, 36.3, 25.3);
+        static Player PF3 = new Player("Kevin Love", 42.7, 26.4, 37.3, 44.8);
+        static Player C3 = new Player("Tristan Thomson", 60.0, 11.3, 0.0, 0.0);
 
-        static Player PG4 = new Player("Jordan Clarkson", 44.5, 23.3);
-        static Player SG4 = new Player("D'Angelo Russel", 40.5, 26.6);
-        static Player SF4 = new Player("Brandon Ingram", 40.2, 16.8);
+        static Player PG4 = new Player("Jordan Clarkson", 44.5, 23.3, 32.9, 32.8);
+        static Player SG4 = new Player("D'Angelo Russell", 40.5, 26.6, 35.2, 44.2);
+        static Player SF4 = new Player("Brandon Ingram", 40.2, 16.8, 29.4, 27.6);
         static Player PF4 = new Player("Julius Randle", 48.8, 21.4);
         static Player C4 = new Player("Ivica Zubac", 52.9, 20.3);
 
