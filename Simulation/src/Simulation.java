@@ -39,11 +39,13 @@ public class Simulation
             System.out.println(time);
             Player []team = t.getTeam();
             Player p1 = getPlayer(team);
-            if(shootThree(p1));
+            if(shootThree(p1))
             {
                 userScore+=3;
+                System.out.println(p1 + "madeThree");
+
             }
-            if (s.wentIn(p1.getShootpct()))
+            else if (s.wentIn(p1.getShootpct()))
             {
                 System.out.println("home shot made");
                 userScore+=2;
@@ -75,11 +77,12 @@ public class Simulation
             System.out.println(time);
             Player []team = t.getTeam();
             Player p2 = getPlayer(team);
-            if(shootThree(p2));
+            if(shootThree(p2))
             {
                 userScore+=3;
+                System.out.println("made three");
             }
-            if (s.wentIn(p2.getShootpct()))
+            else if(s.wentIn(p2.getShootpct()))
             {
                 System.out.println("away shot made");
                 cpuScore += 2;
@@ -175,10 +178,9 @@ public class Simulation
                return true;
             }
         }
-        else
-        {
+
             return false;
-        }
+
     }
 
 
