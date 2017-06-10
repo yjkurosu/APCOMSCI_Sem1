@@ -138,6 +138,7 @@ public class Simulation
             {
                 time.shotTime();
                 awayteamscore(s, t2);
+                System.out.println(t1.getName() + " " + userScore + " - " + cpuScore + " " + t2.getName() );
             }
         }
     }
